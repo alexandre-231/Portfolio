@@ -38,8 +38,13 @@ const textduree3 = document.querySelector("#textduree3");
 const textlieu3 = document.querySelector("#textlieu3");
 const textAction5 = document.querySelector("#textaction5");
 const textAction6 = document.querySelector("#textaction6");
-const textAction7 = document.querySelector("#textaction7");
 
+// Exp 4 (CDD 2026)
+const textExperienceD = document.querySelector("#textExperience4");
+const textduree4 = document.querySelector("#textduree4");
+const textlieu4 = document.querySelector("#textlieu4");
+const textAction8 = document.querySelector("#textaction8");
+const textAction9 = document.querySelector("#textaction9");
 
 // ----- ÉCOLE -----
 const ecoleTitre1 = document.querySelector("#ecoleTitre1");
@@ -164,13 +169,20 @@ const infosRef = [
 ];
 
 // --- DONNÉES DES EXPERIENCES ---
+const infosExpCDD = [
+    "Développeur (CDD)", "Developer (Fixed-term contract)",
+    "Juin 2026 - Juillet 2026 (2 mois)", "June 2026 - July 2026 (2 months)",
+    "IUT Annecy", "IUT Annecy",
+    "Mise en application des préconisations (logiciel, infrastructure, sécurité et conformité RGPD) énoncées pendant le stage, développement d'une nouvelle interface web.", "Implementation of recommendations (software, infrastructure, security and GDPR compliance) outlined during the internship, development of a new web interface.",
+    "Aide au déploiement des différentes images de poste et à la vérification des déploiements.", "Assistance in deploying various workstation images and verifying deployments."
+];
+
 const infosExpStage = [
-    "Stage en informatique", "IT Internship",
-    "Avril 2026 - Mai 2026 (2 mois)", "April 2026 - May 2026 (2 months)",
-    "Service informatique - IUT Annecy (74)", "IT Department - IUT Annecy (74)",
-    "Réaliser un audit complet de leur site web.", "Conduct a complete audit of their website.",
-    "Présenter des solutions aux problèmes rencontrés.", "Present solutions to the problems encountered.",
-    "Prévoir et réaliser la migration d'un site vers une nouvelle version d'un langage.", "Plan and execute a site migration to a new language version."
+    "Stagiaire en informatique", "IT Intern",
+    "Avril 2026 - Juin 2026 (3 mois)", "April 2026 - June 2026 (3 months)",
+    "IUT Annecy", "IUT Annecy",
+    "Réalisation d'un audit complet d'un serveur web sous environnement Linux (logiciel, infrastructure, sécurité et conformité RGPD), suivi d'une phase de recherche technique et de préconisations stratégiques pour corriger les vulnérabilités et les problèmes identifiés.", "Conducted a comprehensive audit of a Linux web server (software, infrastructure, security, and GDPR compliance), followed by a technical research phase and strategic recommendations to fix identified vulnerabilities and issues.",
+    "Conception et développement d'un module personnalisé en PHP pour enrichir les fonctionnalités de l'outil GLPI.", "Design and development of a custom PHP module to enhance the features of the GLPI tool."
 ];
 
 const infosExpUniv = [
@@ -212,13 +224,19 @@ imglangue.addEventListener("click", function () {
         exper2.innerHTML = echangeAnglaisFrenchTitre[8];
         numtel.innerHTML = "Numéro de téléphone";
 
+        // EXP 4 : CDD
+        textExperienceD.innerHTML = infosExpCDD[0];
+        textduree4.innerHTML = infosExpCDD[2];
+        textlieu4.innerHTML = infosExpCDD[4];
+        textAction8.innerHTML = infosExpCDD[6];
+        textAction9.innerHTML = infosExpCDD[8];
+
         // EXP 3 : Stage Informatique
         textExperienceC.innerHTML = infosExpStage[0];
         textduree3.innerHTML = infosExpStage[2];
         textlieu3.innerHTML = infosExpStage[4];
         textAction5.innerHTML = infosExpStage[6];
         textAction6.innerHTML = infosExpStage[8];
-        textAction7.innerHTML = infosExpStage[10];
 
         // EXP 2 : Projet Univ
         textExperienceB.innerHTML = infosExpUniv[0];
@@ -301,13 +319,19 @@ imglangue.addEventListener("click", function () {
         exper2.innerHTML = echangeAnglaisFrenchTitre[9];
         numtel.innerHTML = "Phone Number";
 
+        // EXP 4 : CDD
+        textExperienceD.innerHTML = infosExpCDD[1];
+        textduree4.innerHTML = infosExpCDD[3];
+        textlieu4.innerHTML = infosExpCDD[5];
+        textAction8.innerHTML = infosExpCDD[7];
+        textAction9.innerHTML = infosExpCDD[9];
+
         // EXP 3 : Stage Informatique
         textExperienceC.innerHTML = infosExpStage[1];
         textduree3.innerHTML = infosExpStage[3];
         textlieu3.innerHTML = infosExpStage[5];
         textAction5.innerHTML = infosExpStage[7];
         textAction6.innerHTML = infosExpStage[9];
-        textAction7.innerHTML = infosExpStage[11];
 
         // EXP 2 : Projet Univ
         textExperienceB.innerHTML = infosExpUniv[1];
