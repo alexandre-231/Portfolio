@@ -31,6 +31,10 @@ const h3Sibilia = document.querySelector('#h3Sibilia');
 const pSibiliaShort = document.querySelector('#pSibiliaShort');
 const aSibiliaLink = document.querySelector('#aSibiliaLink');
 
+// --- SELECTEURS NOUVEAU PROJET LE BON COIN ---
+const h3LeBonCoin = document.querySelector('#h3LeBonCoin');
+const pLeBonCoinShort = document.querySelector('#pLeBonCoinShort');
+const aLeBonCoinLink = document.querySelector('#aLeBonCoinLink');
 
 
 const lienprojet =["https://github.com/gregoryyyyyyy/DEPOT-SAE-101-LE-VRAI" , "https://github.com/yanis381/SAE201"]
@@ -43,6 +47,7 @@ const tableauTextBeerclickerEn = [
  "It's a clicker game that I created to discover JavaScript and also to practice PHP with the design of a small database to store everyone's scores and to continue developing it."
 ];
 const tableauImgBeerclicker =["../img/beer_clicker_button.png"]; 
+
 const tableauTextAppiculteur = ["appiculteur 2024" , "jeu creer pour la SAE 1.01 en premiere année de BUT Informatique" , "le principe de ce jeu est simple recuperer un maximum de miel sans se faire tuer par les ours. Avec ceci vous avez des mecanique d'acat d'arme, de soins."];
 const tableauTextAppiculteurEn = [
  "Beekeeper 2024",
@@ -50,6 +55,7 @@ const tableauTextAppiculteurEn = [
  "The principle of this game is simple: collect a maximum of honey without being killed by the bears. With this, you have mechanics for purchasing weapons and healing."
 ];
 const tableauimgAppiculteur = ["../img/sibiliaLogo.jpg "] 
+
 const tableauTextSibilia = ["sibilia" , "reproduction de leur logiciel pour la SAE 2.01" ,"c'est un developpement entier de l'application (front/back) , base de donnée, conception" , "le but de ce logiciel est de gerer des commandes, creer des commandes , crée des plat et bien d'autre fonctionnaliter "];
 const tableauTextSibiliaEn = [
  "Sibilia",
@@ -57,6 +63,10 @@ const tableauTextSibiliaEn = [
  "It is a complete development of the application (front/back), database, and design",
  "The goal of this software is to manage orders, create orders, create dishes, and many other features"
 ];
+
+// --- DONNÉES NOUVEAU PROJET LE BON COIN ---
+const tableauTextLeBonCoin = ["Clone Le Bon Coin", "Projet universitaire (SAE 3.01)", "Conception et développement complet d'une réplique du site Le Bon Coin en utilisant le framework PHP Laravel."];
+const tableauTextLeBonCoinEn = ["Le Bon Coin clone", "University project (SAE 3.01)", "Design and full development of a replica of the Le Bon Coin website using the PHP Laravel framework."];
 
 
 const tableauImgBeerClicker = [
@@ -80,6 +90,8 @@ const tableauImgSibilia = [
     "../img/imgSibilia/creercommandeSibilia.png",
 ];
 
+// --- IMAGES PROJET LE BON COIN (vide pour l'instant) ---
+const tableauImgLeBonCoin = [];
 
 
 const traductionsUI = {
@@ -98,6 +110,7 @@ const traductionsUI = {
  beerClickerShort: "petit clicker sur le theme des simpsons",
  appiculteurShort: "petit jeu creée pour la sae de premiere année",
  sibiliaShort: "replique de logiciel",
+ leBonCoinShort: "réplique du site le bon coin en Laravel",
  statusPasFini: "pas encore fini",
  imageIntro: "Voici quelques images du projet :",
  },
@@ -116,6 +129,7 @@ const traductionsUI = {
  beerClickerShort: "small clicker on The Simpsons theme",
  appiculteurShort: "small game created for the first year SAE",
  sibiliaShort: "software replica",
+ leBonCoinShort: "replica of the Le Bon Coin website in Laravel",
  statusPasFini: "not yet finished",
  imageIntro: "Here are some images of the project :",
 }
@@ -156,6 +170,11 @@ imglangue.addEventListener("click", function () {
     h3Sibilia.innerHTML = estEnAnglais ? "C# sibilia software" : "logiciel C# sibilia";
     pSibiliaShort.innerHTML = trads.sibiliaShort;
     aSibiliaLink.innerHTML = trads.linkGithub;
+
+    // --- TRADUCTION PROJET LE BON COIN ---
+    h3LeBonCoin.innerHTML = estEnAnglais ? "Le Bon Coin clone" : "Clone Le Bon Coin";
+    pLeBonCoinShort.innerHTML = trads.leBonCoinShort;
+    aLeBonCoinLink.innerHTML = trads.linkGithub;
 });
 
 
@@ -190,6 +209,15 @@ projets.forEach(element =>{
             linkText = currentTrads.linkGithub;
             imagesArray = tableauImgSibilia; 
             createPrProjet(null, textArray, null, tableauimgAppiculteur , true , 1, statusText, linkText, imagesArray)
+        }
+        // --- LOGIQUE D'AFFICHAGE MODALE PROJET LE BON COIN ---
+        else if (h3Text.toLowerCase().includes("bon coin")) {
+            textArray = estEnAnglais ? tableauTextLeBonCoinEn : tableauTextLeBonCoin;
+            statusText = currentTrads.statusEnCours;
+            linkText = currentTrads.linkGithub;
+            imagesArray = tableauImgLeBonCoin; 
+            // numLink est défini sur null pour ne pas générer de lien erreur si on ne l'a pas encore ajouté
+            createPrProjet(null, textArray, null, [], true , null, statusText, linkText, imagesArray)
         }
     });
 });
