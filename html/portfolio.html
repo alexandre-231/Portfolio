@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="icon"  href="">
+</head>
+
+<body>
+    <header>
+        <h1 class="haederprojetPage">Portfolio</h1>
+        <h1 class="haederprojetPage">my projects</h1>
+    </header>
+    
+    <nav>
+        <p><a href="mainPage.html#divEducation" id="education">MY Education</a></p>
+        <p><a href="mainPage.html#divTechSkills" id="skills">technical skills</a></p>
+        <p><a href="mainPage.html#Miscellanous2" id="Miscellanous">Miscellanous</a></p>
+        <p><a href="mainPage.html#Experience2" id="Experience">Work Experience</a></p>
+        <p><a href="portfolio.html" id="Portfolio">Portfolio</a></p>
+        <p><a href="../doc/CV.pdf" target="_blank" id="CV">CV</a></p>
+        <p><a href="../html/contactPage.html" id="Contact">contact</a></p>
+    </nav>
+
+    <div id="divLangue">
+        <p id="texteLangue">languages</p>
+        <img id="imgLangue" src="../img/drpEN.png" alt="Langue">
+    </div>
+
+    <!-- CONTENEUR POUR LES FILTRES -->
+    <div id="filter-section">
+        <input id="test" type="checkbox">
+        <label for="test">web</label>
+        
+        <input type="checkbox" id="checkboxC">
+        <label for="checkboxC">c#</label>
+        
+        <input type="checkbox" id="myCheckbox">
+        <label for="myCheckbox"></label>
+        
+        <button onclick="verifierCheckbox()" id="btnFiltre">apply filter</button>
+    </div>
+    
+    <!-- CONTENEUR POUR LES PROJETS -->
+    <div id="projects-container">
+        <div class="php tous perso">
+            <img src="../img/beer_clicker_button.png" alt="">
+            <h3 id="h3BeerClicker">Beer Clicker</h3>
+            <p id="pBeerClickerShort">Small clicker on The Simpsons theme</p>
+            <a href=""></a>
+            <p id="pBeerClickerStatus">not yet finished</p>
+        </div>
+        
+        <div class="c tous sae">
+            <img src="../img/appiculteur/imgmarqueApiculteur.png" alt="">
+            <h3 id="h3Appiculteur">Beekeeper (SAE project)</h3>
+            <p id="pAppiculteurShort">Small game created for the first year SAE</p>
+            <a href="https://github.com/gregoryyyyyyy/DEPOT-SAE-101-LE-VRAI" id="aAppiculteurLink" target="_blank">Link to the GitHub project</a>
+        </div>
+        
+        <div class="c tous sae">
+            <img src="../img/sibiliaLogo.jpg" alt="">
+            <h3 id="h3Sibilia">C# Sibilia Software</h3>
+            <p id="pSibiliaShort">Software replica</p>
+            <a href="https://github.com/yanis381/SAE201" id="aSibiliaLink" target="_blank">Link to the GitHub project</a>
+        </div>
+    </div>
+
+    <script src="../js/main2.js" defer></script>
+</body>
+</html>

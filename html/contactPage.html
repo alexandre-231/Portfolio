@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire de contact</title>
+    <link rel="stylesheet" type="text/css" href="../css/styleContact.css">
+</head>
+<body>
+
+<h2>Formulaire </h2>
+<nav>
+    <p ><a href="mainPage.html#divEducation" id="education">MY Education</a></p>
+        <p><a href="mainPage.html#divTechSkills" id="skills" >technical skills</a></p>
+        <p><a href="mainPage.html#Miscellanous2" id="Miscellanous">Miscellanous</a></p>
+        <p><a href="mainPage.html#Experience2" id="Experience">Work Experience</a> </p>
+        <p><a href="portfolio.html" id="Portfolio">Portfolio</a> </p>
+        <p><a href="../doc/CV.pdf" target="_blank" id="CV">CV</a> </p>
+</nav>
+
+<form id="contactForm">
+    <label>Nom :</label><br>
+    <input type="text" id="nom" required><br><br>
+
+    <label>Email :</label><br>
+    <input type="email" id="email" required><br><br>
+
+    <label>Message :</label><br>
+    <textarea id="message" required></textarea><br><br>
+
+    <button type="button" onclick="sendMail()">Envoyer</button>
+</form>
+
+<script>
+function sendMail() {
+    const nom = document.getElementById("nom").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    const mailto = `mailto:Alexandre.savy@etu.univsmb.fr?subject=Message de ${nom}&body=Email : ${email}%0D%0A%0D%0A${encodeURIComponent(message)}`;
+    
+    window.location.href = mailto;
+}
+</script>
+
+</body>
+</html>
