@@ -46,6 +46,16 @@ const textlieu4 = document.querySelector("#textlieu4");
 const textAction8 = document.querySelector("#textaction8");
 const textAction9 = document.querySelector("#textaction9");
 
+// Exp 5 (Alternance)
+const textExperienceE = document.querySelector("#textExperience5");
+const textduree5 = document.querySelector("#textduree5");
+const textlieu5 = document.querySelector("#textlieu5");
+const textAction10 = document.querySelector("#textaction10");
+const textAction11 = document.querySelector("#textaction11");
+const textAction12 = document.querySelector("#textaction12");
+const textAction13 = document.querySelector("#textaction13");
+
+
 // ----- ÉCOLE -----
 const ecoleTitre1 = document.querySelector("#ecoleTitre1");
 const ecoleInfo1 = document.querySelector("#ecoleInfo1");
@@ -169,6 +179,16 @@ const infosRef = [
 ];
 
 // --- DONNÉES DES EXPERIENCES ---
+const infosExpAlternance = [
+    "Alternant en Informatique (Développement & Système)", "IT Work-Study Apprentice (Development & Systems)",
+    "Septembre 2026 - Août 2027 (1 an)", "September 2026 - August 2027 (1 year)",
+    "IUT Annecy", "IUT Annecy",
+    "Conception de bases de données (MCD, MLD, SQL) et modélisation UML.", "Database design (MCD, MLD, SQL) and UML modeling.",
+    "Développement d'une application web avec le framework Laravel.", "Web application development using the Laravel framework.",
+    "Administration d'un serveur de messagerie SMTP sous Linux.", "Administration of an SMTP mail server on Linux.",
+    "Maintenance matérielle/logicielle du parc informatique et déploiement automatisé via WAPT.", "Hardware/software maintenance of IT equipment and automated deployment using WAPT."
+];
+
 const infosExpCDD = [
     "Développeur (CDD)", "Developer (Fixed-term contract)",
     "Juin 2026 - Juillet 2026 (2 mois)", "June 2026 - July 2026 (2 months)",
@@ -223,6 +243,15 @@ imglangue.addEventListener("click", function () {
         exper.innerHTML = echangeAnglaisFrenchTitre[8];
         exper2.innerHTML = echangeAnglaisFrenchTitre[8];
         numtel.innerHTML = "Numéro de téléphone";
+
+        // EXP 5 : Alternance
+        textExperienceE.innerHTML = infosExpAlternance[0];
+        textduree5.innerHTML = infosExpAlternance[2];
+        textlieu5.innerHTML = infosExpAlternance[4];
+        textAction10.innerHTML = infosExpAlternance[6];
+        textAction11.innerHTML = infosExpAlternance[8];
+        textAction12.innerHTML = infosExpAlternance[10];
+        textAction13.innerHTML = infosExpAlternance[12];
 
         // EXP 4 : CDD
         textExperienceD.innerHTML = infosExpCDD[0];
@@ -318,6 +347,15 @@ imglangue.addEventListener("click", function () {
         exper.innerHTML = echangeAnglaisFrenchTitre[9];
         exper2.innerHTML = echangeAnglaisFrenchTitre[9];
         numtel.innerHTML = "Phone Number";
+
+        // EXP 5 : Alternance
+        textExperienceE.innerHTML = infosExpAlternance[1];
+        textduree5.innerHTML = infosExpAlternance[3];
+        textlieu5.innerHTML = infosExpAlternance[5];
+        textAction10.innerHTML = infosExpAlternance[7];
+        textAction11.innerHTML = infosExpAlternance[9];
+        textAction12.innerHTML = infosExpAlternance[11];
+        textAction13.innerHTML = infosExpAlternance[13];
 
         // EXP 4 : CDD
         textExperienceD.innerHTML = infosExpCDD[1];
