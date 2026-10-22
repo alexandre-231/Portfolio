@@ -1,6 +1,7 @@
 const checkbox = document.querySelector('#myCheckbox');
 const checkbox2 = document.querySelector("#test");
 const checkbox3 = document.querySelector("#checkboxC");
+const checkboxPython = document.querySelector("#checkboxPython"); 
 const body = document.querySelector("body");
 const projets = document.querySelectorAll(".tous");
 
@@ -31,20 +32,24 @@ const h3Sibilia = document.querySelector('#h3Sibilia');
 const pSibiliaShort = document.querySelector('#pSibiliaShort');
 const aSibiliaLink = document.querySelector('#aSibiliaLink');
 
-// --- SELECTEURS NOUVEAU PROJET LE BON COIN ---
 const h3LeBonCoin = document.querySelector('#h3LeBonCoin');
 const pLeBonCoinShort = document.querySelector('#pLeBonCoinShort');
 const aLeBonCoinLink = document.querySelector('#aLeBonCoinLink');
 
+const h3Calculatrice = document.querySelector('#h3Calculatrice');
+const pCalculatriceShort = document.querySelector('#pCalculatriceShort');
+const aCalculatriceLink = document.querySelector('#aCalculatriceLink');
+const pCalculatriceStatus = document.querySelector('#pCalculatriceStatus');
+
 
 const lienprojet =["https://github.com/gregoryyyyyyy/DEPOT-SAE-101-LE-VRAI" , "https://github.com/yanis381/SAE201"]
 
-
-const tableauTextBeerclicker =["beerclicker" , "simpson" , "c'est un clicker que j'ai crée pour decouvrir le javascript et pratiquer aussi du php avec la conception d'une petite base de donnée pour stocker les scores de chaqu'un et pour le continuer."];
+// --- TEXTES REVISITÉS POUR LE BEER CLICKER ---
+const tableauTextBeerclicker =["Jeu web interactif" , "Projet d'apprentissage personnel" , "Développement d'un jeu de type 'Clicker' pour maîtriser JavaScript (événements, manipulation du DOM) avec un backend PHP/MySQL pour la gestion des scores en temps réel."];
 const tableauTextBeerclickerEn = [
- "Beer Clicker",
- "Simpson",
- "It's a clicker game that I created to discover JavaScript and also to practice PHP with the design of a small database to store everyone's scores and to continue developing it."
+ "Interactive Web Game",
+ "Personal learning project",
+ "Development of a 'Clicker' game to master JavaScript (events, DOM manipulation) with a PHP/MySQL backend for real-time score management."
 ];
 const tableauImgBeerclicker =["../img/beer_clicker_button.png"]; 
 
@@ -64,9 +69,12 @@ const tableauTextSibiliaEn = [
  "The goal of this software is to manage orders, create orders, create dishes, and many other features"
 ];
 
-// --- DONNÉES NOUVEAU PROJET LE BON COIN ---
 const tableauTextLeBonCoin = ["Clone Le Bon Coin", "Projet universitaire (SAE 3.01)", "Conception et développement complet d'une réplique du site Le Bon Coin en utilisant le framework PHP Laravel."];
 const tableauTextLeBonCoinEn = ["Le Bon Coin clone", "University project (SAE 3.01)", "Design and full development of a replica of the Le Bon Coin website using the PHP Laravel framework."];
+
+// --- TEXTES REVISITÉS POUR LA CALCULATRICE ---
+const tableauTextCalculatrice = ["Application mathématique Python", "Projet personnel en développement", "Développement d'un outil de calcul évolutif en Python. Implémentation en cours d'un module de rendu graphique pour le traçage de courbes à partir d'équations complexes."];
+const tableauTextCalculatriceEn = ["Python Math Application", "Personal project in development", "Development of a scalable calculation tool in Python. Ongoing implementation of a graphical rendering module for plotting curves from complex equations."];
 
 
 const tableauImgBeerClicker = [
@@ -90,8 +98,8 @@ const tableauImgSibilia = [
     "../img/imgSibilia/creercommandeSibilia.png",
 ];
 
-// --- IMAGES PROJET LE BON COIN (vide pour l'instant) ---
 const tableauImgLeBonCoin = [];
+const tableauImgCalculatrice = []; 
 
 
 const traductionsUI = {
@@ -107,10 +115,11 @@ const traductionsUI = {
  btnFiltre: "appliquer le filtre",
  linkGithub: "Lien vers le projet git hub",
  statusEnCours: "attention: ce projet est en cours de développement",
- beerClickerShort: "petit clicker sur le theme des simpsons",
+ beerClickerShort: "Développement d'un jeu web interactif (JS/PHP)",
  appiculteurShort: "petit jeu creée pour la sae de premiere année",
  sibiliaShort: "replique de logiciel",
  leBonCoinShort: "réplique du site le bon coin en Laravel",
+ calculatriceShort: "Outil de calcul évolutif en Python",
  statusPasFini: "pas encore fini",
  imageIntro: "Voici quelques images du projet :",
  },
@@ -126,10 +135,11 @@ const traductionsUI = {
  btnFiltre: "apply filter",
  linkGithub: "Link to the GitHub project",
  statusEnCours: "warning: this project is currently under development",
- beerClickerShort: "small clicker on The Simpsons theme",
+ beerClickerShort: "Interactive web game development (JS/PHP)",
  appiculteurShort: "small game created for the first year SAE",
  sibiliaShort: "software replica",
  leBonCoinShort: "replica of the Le Bon Coin website in Laravel",
+ calculatriceShort: "Scalable Python calculation tool",
  statusPasFini: "not yet finished",
  imageIntro: "Here are some images of the project :",
 }
@@ -156,10 +166,11 @@ imglangue.addEventListener("click", function () {
     
     btnFiltre.innerHTML = trads.btnFiltre;
     document.querySelector('input[id="test"]').nextSibling.textContent = "php"; 
-    document.querySelector('input[id="checkboxC"]').nextSibling.textContent = "c#"; 
+    document.querySelector('input[id="checkboxC"]').nextSibling.textContent = "c#";
+    document.querySelector('input[id="checkboxPython"]').nextSibling.textContent = "python"; 
     document.querySelector('input[id="myCheckbox"]').nextSibling.textContent = ""; 
     
-    h3BeerClicker.innerHTML = estEnAnglais ? "beer clicker" : "beer clicker"; 
+    h3BeerClicker.innerHTML = estEnAnglais ? "Interactive Web Game" : "Jeu web interactif"; 
     pBeerClickerShort.innerHTML = trads.beerClickerShort;
     pBeerClickerStatus.innerHTML = trads.statusPasFini;
 
@@ -171,31 +182,35 @@ imglangue.addEventListener("click", function () {
     pSibiliaShort.innerHTML = trads.sibiliaShort;
     aSibiliaLink.innerHTML = trads.linkGithub;
 
-    // --- TRADUCTION PROJET LE BON COIN ---
     h3LeBonCoin.innerHTML = estEnAnglais ? "Le Bon Coin clone" : "Clone Le Bon Coin";
     pLeBonCoinShort.innerHTML = trads.leBonCoinShort;
     aLeBonCoinLink.innerHTML = trads.linkGithub;
+
+    h3Calculatrice.innerHTML = estEnAnglais ? "Python Math App" : "Application mathématique Python";
+    pCalculatriceShort.innerHTML = trads.calculatriceShort;
+    aCalculatriceLink.innerHTML = trads.linkGithub;
+    pCalculatriceStatus.innerHTML = trads.statusEnCours;
 });
 
 
 projets.forEach(element =>{
     element.addEventListener("click", events =>{
         
-        // CORRECTION : Si la fenêtre est déjà ouverte, on ne fait rien !
         if (document.getElementById("backgroundDivProjet")) return;
         
         let textArray, statusText, linkText, imagesArray;
-        let h3Text = element.querySelector("h3").innerHTML;
+        let h3Text = element.querySelector("h3").innerHTML.toLowerCase(); // On passe en minuscules pour faciliter les comparaisons
         const currentTrads = estEnAnglais ? traductionsUI.en : traductionsUI.fr;
 
-        if (h3Text.includes("beer clicker") || h3Text.includes("Beer Clicker")) {
+        // Mise à jour des conditions pour matcher les nouveaux titres (interactif / interactive)
+        if (h3Text.includes("interactif") || h3Text.includes("interactive")) {
             textArray = estEnAnglais ? tableauTextBeerclickerEn : tableauTextBeerclicker;
             statusText = currentTrads.statusEnCours;
             linkText = currentTrads.linkGithub;
             imagesArray = tableauImgBeerClicker; 
             createPrProjet(null, textArray, null, tableauImgBeerclicker , false , null, statusText, linkText, imagesArray)
         }
-        else if (h3Text.includes("appiculteur") || h3Text.includes("beekeeper") || h3Text.includes("Beekeeper")) {
+        else if (h3Text.includes("appiculteur") || h3Text.includes("beekeeper")) {
             textArray = estEnAnglais ? tableauTextAppiculteurEn : tableauTextAppiculteur;
             statusText = currentTrads.statusEnCours;
             linkText = currentTrads.linkGithub;
@@ -203,21 +218,27 @@ projets.forEach(element =>{
             imgs = ["../img/appiculteur/imgmarqueApiculteur.png"]
             createPrProjet(null, textArray, null, imgs, true , 0, statusText, linkText, imagesArray )
         }
-        else if (h3Text.includes("sibilia") || h3Text.includes("Sibilia")) {
+        else if (h3Text.includes("sibilia")) {
             textArray = estEnAnglais ? tableauTextSibiliaEn : tableauTextSibilia;
             statusText = currentTrads.statusEnCours;
             linkText = currentTrads.linkGithub;
             imagesArray = tableauImgSibilia; 
             createPrProjet(null, textArray, null, tableauimgAppiculteur , true , 1, statusText, linkText, imagesArray)
         }
-        // --- LOGIQUE D'AFFICHAGE MODALE PROJET LE BON COIN ---
-        else if (h3Text.toLowerCase().includes("bon coin")) {
+        else if (h3Text.includes("bon coin")) {
             textArray = estEnAnglais ? tableauTextLeBonCoinEn : tableauTextLeBonCoin;
             statusText = currentTrads.statusEnCours;
             linkText = currentTrads.linkGithub;
             imagesArray = tableauImgLeBonCoin; 
-            // numLink est défini sur null pour ne pas générer de lien erreur si on ne l'a pas encore ajouté
             createPrProjet(null, textArray, null, [], true , null, statusText, linkText, imagesArray)
+        }
+        // Mise à jour pour la calculatrice (math / mathématique)
+        else if (h3Text.includes("math")) {
+            textArray = estEnAnglais ? tableauTextCalculatriceEn : tableauTextCalculatrice;
+            statusText = currentTrads.statusEnCours;
+            linkText = currentTrads.linkGithub;
+            imagesArray = tableauImgCalculatrice; 
+            createPrProjet(null, textArray, null, [], false, null, statusText, linkText, imagesArray)
         }
     });
 });
@@ -295,7 +316,6 @@ function createPrProjet(tagname, text, parent, imgamettre , boolProjetfini , num
 
     const close = _ =>{
         element.classList.add("out")
-        // CORRECTION : On retire le fond après 400ms (le temps de l'animation CSS)
         setTimeout( _ =>{
             if(fond.parentNode) {
                 fond.remove();
@@ -339,13 +359,16 @@ function createlink( parent, linkAmmetre , estaligner , numLink, linkText){
 }
 
 function verifierCheckbox() {
-    if (checkbox.checked || checkbox2.checked || checkbox3.checked) {
+    if (checkbox.checked || checkbox2.checked || checkbox3.checked || checkboxPython.checked) {
         projets.forEach(element => {
             element.classList.remove('hidden');
             if(checkbox2.checked && element.classList.contains("php") ){
                 element.classList.remove('hidden');
             }
             else if(checkbox3.checked && element.classList.contains("c")){
+                element.classList.remove('hidden');
+            }
+            else if(checkboxPython.checked && element.classList.contains("python")){
                 element.classList.remove('hidden');
             }
             else{
